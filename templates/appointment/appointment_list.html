@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Appointments</h1>
+    <hr/>
+    <ul>
+        {% for appointment in object_list %}
+            <p style="font-size: 20px; font-family: Verdana">{{ appointment.patient }} : {{ appointment.oncologist }} | {{ appointment.date }}</p>
+            <hr/>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

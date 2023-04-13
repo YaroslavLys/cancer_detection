@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Medical Examinations</h1>
+    <a href="{% url 'med_exam_create' %}">Start new medical examination</a>
+    <hr/>
+    <ul>
+        {% for med_examination in object_list %}
+            <a href="{% url 'med_exam_detail' med_examination.pk %}" style="text-decoration: none; font-family: Verdana; font-size: 20px">{{ med_examination.patient }} : {{ med_examination.oncologist }} | Begins: {{ med_examination.start_date }}</a>
+            <hr/>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

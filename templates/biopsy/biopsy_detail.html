@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Details about biopsy</h1>
+    <hr/>
+    <ul>
+        <li>Date: {{ biopsy.date }}</li>
+        <li>Type: {{ biopsy.type_of_research }}</li>
+        <li>Report: {{ biopsy.report }}</li>
+    </ul>
+    <hr/>
+{% endblock %}

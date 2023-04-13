@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Details about {{ patient.name }} {{ patient.surname }}</h1>
+    <hr/>
+    <ul>
+        <li>Name: {{ patient.name }}</li>
+        <li>Surname: {{ patient.surname }}</li>
+        <li>Age: {{ patient.age }}</li>
+        <li>Email: {{ patient.email }}</li>
+        <li>Address: {{ patient.address }}</li>
+    </ul>
+    <a href="{% url 'patient_delete' patient.pk %}"
+       style="text-decoration: none;
+       margin-left: 50px;
+       background: lightcoral;
+       padding: 8px 14px;
+       font-size: 14px;
+       color: white;
+       border-radius: 5px"
+    >Delete</a>
+    <hr/>
+{% endblock %}

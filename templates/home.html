@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Upload CSV file</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="csv_file">CSV file:</label>
+            <input type="file" name="csv_file" id="csv_file" accept=".csv" style="background-color: #27ab00;
+        border-color: #0a4400;
+        color: white;
+        padding: 4px 15px;
+        font-family: Helvetica;
+
+        margin-top: 10px;
+        border-radius: 10px;
+        cursor: pointer;">
+        </div>
+        <button type="submit" style="
+        background-color: #27ab00;
+        border-color: #0a4400;
+        color: white;
+        padding: 4px 15px;
+        font-family: Helvetica;
+        font-size: 12px;
+        margin-top: 30px;
+        border-radius: 10px;
+        cursor: pointer;">
+            Upload
+        </button>
+    </form>
+{% endblock %}
+

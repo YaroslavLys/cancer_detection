@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Patients</h1>
+    <hr/>
+    <ul>
+        {% for patient in object_list %}
+            <a href="{% url 'patient_detail' patient.pk %}" style="text-decoration: none; font-family: Verdana; font-size: 20px">{{ patient.name }} {{ patient.surname }}</a>
+            <hr/>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

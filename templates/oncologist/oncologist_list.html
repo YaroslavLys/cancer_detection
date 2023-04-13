@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Oncologists</h1>
+    <hr/>
+    <ul>
+        {% for oncologist in object_list %}
+            <a href="{% url 'oncologist_detail' oncologist.pk %}" style="text-decoration: none; font-family: Verdana; font-size: 20px">{{ oncologist.name }} {{ oncologist.surname }}</a>
+            <hr/>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

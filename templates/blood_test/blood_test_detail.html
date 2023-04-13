@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Details about blood test</h1>
+    <hr/>
+    <ul>
+        <li>Date: {{ bloodtest.date }}</li>
+        <li>Type: {{ bloodtest.type_of_research }}</li>
+        <li>Result: {{ bloodtest.result }}</li>
+    </ul>
+    <hr/>
+{% endblock %}

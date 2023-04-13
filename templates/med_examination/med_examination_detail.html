@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Details about medical examination "{{ medicalexamination.patient }}"</h1>
+    <hr/>
+    <ul>
+        <li>Patient: <a href="{% url 'patient_detail' medicalexamination.patient.pk %}">{{ medicalexamination.patient }}</a></li>
+        <li>Oncologist: <a href="{% url 'oncologist_detail' medicalexamination.oncologist.pk %}">{{ medicalexamination.oncologist }}</a></li>
+        <li>Begins: {{ medicalexamination.start_date }}</li>
+        <li>Ends: {{ medicalexamination.end_date }}</li>
+    </ul>
+    <h3>Tests in medical examination</h3>
+    {% if bloodtest %}
+        <p>Blood test:</p>
+        <ul>
+            {% for test in bloodtest %}
+                <li><a href="{% url 'blood_test_detail' test.pk %}">{{ test.type_of_research }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div style="margin-top: 15px">
+            <p style="display: inline">No test</p>
+            <a href="{% url 'blood_test_create' pk=medicalexamination.pk %}">Add blood test</a>
+        </div>
+    {% endif %}
+    {% if mri %}
+        <p>MRI:</p>
+        <ul>
+            {% for test in mri %}
+                <li><a href="{% url 'mri_detail' test.pk %}">{{ test.type_of_research }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div style="margin-top: 15px">
+            <p style="display: inline">No test</p>
+            <a href="{% url 'mri_create' pk=medicalexamination.pk %}">Add MRI</a>
+        </div>
+    {% endif %}
+    {% if biopsy %}
+        <p>Biopsy:</p>
+        <ul>
+            {% for test in biopsy %}
+                <li><a href="{% url 'biopsy_detail' test.pk %}">{{ test.type_of_research }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div style="margin-top: 15px">
+            <p style="display: inline">No test</p>
+            <a href="{% url 'biopsy_create' pk=medicalexamination.pk %}">Add biopsy</a>
+        </div>
+    {% endif %}
+    <p></p>
+    <a href="{% url 'med_exam_update' medicalexamination.pk %}"
+       style="text-decoration: none;
+       margin-left: 50px;
+       background: #4cb5ff;
+       padding: 8px 14px;
+       font-size: 14px;
+       color: white;
+       border-radius: 5px"
+    >Update</a>
+
+    <a href="{% url 'med_exam_delete' medicalexamination.pk %}"
+       style="text-decoration: none;
+       margin-left: 50px;
+       background: lightcoral;
+       padding: 8px 14px;
+       font-size: 14px;
+       color: white;
+       border-radius: 5px"
+    >Delete</a>
+    <hr/>
+{% endblock %}

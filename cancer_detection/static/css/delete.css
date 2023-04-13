@@ -1,0 +1,13 @@
+.delete-button {
+  background: linear-gradient(to right, #ff4d4d 0%, #ff6666 100%);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: #ff4d4d;
+}

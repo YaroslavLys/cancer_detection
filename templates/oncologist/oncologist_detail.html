@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Details about {{ oncologist.name }} {{ oncologist.surname }}</h1>
+    <hr/>
+    <ul>
+        <li>Name: {{ oncologist.name }}</li>
+        <li>Surname: {{ oncologist.surname }}</li>
+        <li>Age: {{ oncologist.age }}</li>
+        <li>Email: {{ oncologist.email }}</li>
+        <li>Salary: ${{ oncologist.salary }}</li>
+    </ul>
+    <a href="{% url 'oncologist_delete' oncologist.pk %}"
+       style="text-decoration: none;
+       margin-left: 50px;
+       background: lightcoral;
+       padding: 8px 14px;
+       font-size: 14px;
+       color: white;
+       border-radius: 5px"
+    >Delete</a>
+    <hr/>
+{% endblock %}
